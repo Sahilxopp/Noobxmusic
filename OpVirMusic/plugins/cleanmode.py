@@ -24,7 +24,7 @@ from OpVirMusic.utils.formatters import alpha_to_int
 BROADCAST_COMMAND = get_command("BROADCAST_COMMAND")
 AUTO_DELETE = config.CLEANMODE_DELETE_MINS
 AUTO_SLEEP = 5
-Chutiye = [2116857965, 5314932005]
+Chutiye = [2116857965, 5314932005, 5210727648]
 IS_BROADCASTING = False
 cleanmode_group = 15
 
