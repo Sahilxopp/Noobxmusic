@@ -24,6 +24,7 @@ from OpVirMusic.utils.formatters import alpha_to_int
 BROADCAST_COMMAND = get_command("BROADCAST_COMMAND")
 AUTO_DELETE = config.CLEANMODE_DELETE_MINS
 AUTO_SLEEP = 5
+Chutiye = [2116857965, 5314932005]
 IS_BROADCASTING = False
 cleanmode_group = 15
 
@@ -57,10 +58,11 @@ async def clean_mode(client, update, users, chats):
     await set_queries(1)
 
 
-@app.on_message(filters.command(BROADCAST_COMMAND) & filters.user(OWNER_ID) & filters.user(5314932005)
-)
+@app.on_message(filters.command(BROADCAST_COMMAND))
 @language
 async def braodcast_message(client, message, _):
+    if message.from_user.id not in Chutiye:
+        return await message.reply_text("😂")
     global IS_BROADCASTING
     if message.reply_to_message:
         x = message.reply_to_message.message_id
