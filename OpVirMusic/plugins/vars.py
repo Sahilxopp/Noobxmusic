@@ -1,3 +1,17 @@
+import asyncio
+
+from pyrogram import filters
+
+import config
+from strings import get_command
+from config import OWNER_ID
+from OpVirMusic import app
+from OpVirMusic.misc import SUDOERS
+from OpVirMusic.utils.database.memorydatabase import get_video_limit
+from OpVirMusic.utils.formatters import convert_bytes
+
+VARS_COMMAND = get_command("VARS_COMMAND")
+
 @app.on_message(filters.command(VARS_COMMAND) & SUDOERS)
 async def varsFunc(client, message):
     mystic = await message.reply_text(
