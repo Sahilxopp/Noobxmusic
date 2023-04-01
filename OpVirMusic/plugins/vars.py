@@ -1,22 +1,7 @@
-import asyncio
-
-from pyrogram import filters
-
-import config
-from strings import get_command
-from config import OWNER_ID
-from OpVirMusic import app
-from OpVirMusic.misc import SUDOERS
-from OpVirMusic.utils.database.memorydatabase import get_video_limit
-from OpVirMusic.utils.formatters import convert_bytes
-
-VARS_COMMAND = get_command("VARS_COMMAND")
-
-
-@app.on_message(filters.command(VARS_COMMAND) & filters.user(OWNER_ID))
+@app.on_message(filters.command(VARS_COMMAND) & SUDOERS)
 async def varsFunc(client, message):
     mystic = await message.reply_text(
-        "ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ... ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs..."
+        "Pʟᴇᴀsᴇ ᴡᴀɪᴛ... Gᴇᴛᴛɪɴɢ ʏᴏᴜʀ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs...!"
     )
     v_limit = await get_video_limit()
     bot_name = config.BOT_NAME
@@ -30,96 +15,94 @@ async def varsFunc(client, message):
     song = config.SONG_DOWNLOAD_DURATION
     play_duration = config.DURATION_LIMIT_MIN
     cm = config.CLEANMODE_DELETE_MINS
-    auto_sug = config.AUTO_SUGGESTION_TIME
     if config.AUTO_LEAVING_ASSISTANT == str(True):
-        ass = "ʏᴇs"
+        ass = "Yᴇs"
     else:
-        ass = "ɴᴏ"
+        ass = "Nᴏ"
     if config.PRIVATE_BOT_MODE == str(True):
-        pvt = "ʏᴇs"
+        pvt = "Yᴇs"
     else:
-        pvt = "ɴᴏ"
-    if config.AUTO_SUGGESTION_MODE == str(True):
-        a_sug = "ʏᴇs"
-    else:
-        a_sug = "ɴᴏ"
+        pvt = "Nᴏ"
     if config.AUTO_DOWNLOADS_CLEAR == str(True):
-        down = "ʏᴇs"
+        down = "Yᴇs"
     else:
-        down = "ɴᴏ"
+        down = "Nᴏ"
 
     if not config.GITHUB_REPO:
-        git = "ɴᴏ"
+        git = "Nᴏ"
     else:
-        git = f"[ʀᴇᴩᴏ]({config.GITHUB_REPO})"
+        git = f"[Rᴇᴩᴏ]({config.GITHUB_REPO})"
     if not config.START_IMG_URL:
-        start = "ɴᴏ"
+        start = "Nᴏ"
     else:
-        start = f"[ɪᴍᴀɢᴇ]({config.START_IMG_URL})"
+        start = f"[Iᴍᴀɢᴇ]({config.START_IMG_URL})"
     if not config.SUPPORT_CHANNEL:
-        s_c = "ɴᴏ"
+        s_c = "Nᴏ"
     else:
-        s_c = f"[ᴄʜᴀɴɴᴇʟ]({config.SUPPORT_CHANNEL})"
+        s_c = f"[Cʜᴀɴɴᴇʟ]({config.SUPPORT_CHANNEL})"
     if not config.SUPPORT_GROUP:
-        s_g = "ɴᴏ"
+        s_g = "Nᴏ"
     else:
-        s_g = f"[sᴜᴩᴩᴏʀᴛ]({config.SUPPORT_GROUP})"
+        s_g = f"[Sᴜᴩᴩᴏʀᴛ]({config.SUPPORT_GROUP})"
     if not config.GIT_TOKEN:
-        token = "ɴᴏ"
+        token = "Nᴏ"
     else:
-        token = "ʏᴇs"
+        token = "Yᴇs"
     if (
         not config.SPOTIFY_CLIENT_ID
         and not config.SPOTIFY_CLIENT_SECRET
     ):
-        sotify = "ɴᴏ"
+        sotify = "Nᴏ"
     else:
-        sotify = "ʏᴇs"
+        sotify = "Yᴇs"
     owners = [str(ids) for ids in config.OWNER_ID]
     owner_id = " ,".join(owners)
     tg_aud = convert_bytes(config.TG_AUDIO_FILESIZE_LIMIT)
     tg_vid = convert_bytes(config.TG_VIDEO_FILESIZE_LIMIT)
-    text = f"""**ᴍᴜsɪᴄ ʙᴏᴛ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs:**
+    text = f"""**Mᴜsɪᴄ Bᴏᴛ Cᴏɴғɪɢ Vᴀʀɪᴀʙʟᴇs :**
 
-**<u>ʙᴀsɪᴄ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**ᴍᴜsɪᴄ_ʙᴏᴛ_ɴᴀᴍᴇ** : `{bot_name}`
-**ᴅᴜʀᴀᴛɪᴏɴ_ʟɪᴍɪᴛ** : `{play_duration} ᴍɪɴᴜᴛᴇs`
-**sᴏɴɢ_ᴅᴏᴡɴʟᴏᴀᴅ_ᴅᴜʀᴀᴛɪᴏɴ_ʟɪᴍɪᴛ** :` {song} ᴍɪɴᴜᴛᴇs`
-**ᴏᴡɴᴇʀ_ɪᴅ** : `{owner_id}`
+<u>Bᴀsɪᴄ Vᴀʀɪᴀʙʟᴇs:</u>
+MUSIC_BOT_NAME : {bot_name}
+DURATION_LIMIT : {play_duration} ᴍɪɴᴜᴛᴇs
+SONG_DOWNLOAD_DURATION_LIMIT : {song} ᴍɪɴᴜᴛᴇs
+OWNER_ID : {owner_id}
     
-**<u>ʀᴇᴩᴏsɪᴛᴏʀʏ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**ᴜᴩsᴛʀᴇᴀᴍ_ʀᴇᴩᴏ** : `{up_r}`
-**ᴜᴩsᴛʀᴇᴀᴍ_ʙʀᴀɴᴄʜ** : `{up_b}`
-**ɢɪᴛʜᴜʙ_ʀᴇᴩᴏ** :` {git}`
-**ɢɪᴛ_ᴛᴏᴋᴇɴ**:` {token}`
+<u>Rᴇᴩᴏsɪᴛᴏʀʏ Vᴀʀɪᴀʙʟᴇs :</u>
+
+UPSTREAM_REPO : {up_r}
+UPSTREAM_BRANCH : {up_b}
+GITHUB_REPO : {git}
+GIT_TOKEN : {token}
 
 
-**<u>ʙᴏᴛ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**ᴀᴜᴛᴏ_ʟᴇᴀᴠɪɴɢ_ᴀssɪsᴛᴀɴᴛ** : `{ass}`
-**ᴀssɪsᴛᴀɴᴛ_ʟᴇᴀᴠᴇ_ᴛɪᴍᴇ** : `{auto_leave} sᴇᴄᴏɴᴅs`
-**ᴀᴜᴛᴏ_sᴜɢɢᴇsᴛɪᴏɴ_ᴍᴏᴅᴇ** :` {a_sug}`
-**ᴀᴜᴛᴏ_sᴜɢɢᴇsᴛɪᴏɴ_ᴛɪᴍᴇ** : `{auto_sug} sᴇᴄᴏɴᴅs`
-**ᴀᴜᴛᴏ_ᴅᴏᴡɴʟᴏᴀᴅs_ᴄʟᴇᴀʀ** : `{down}`
-**ᴩʀɪᴠᴀᴛᴇ_ʙᴏᴛ_ᴍᴏᴅᴇ** : `{pvt}`
-**ʏᴏᴜᴛᴜʙᴇ_ᴇᴅɪᴛ_sʟᴇᴇᴩ** : `{yt_sleep} sᴇᴄᴏɴᴅs`
-**ᴛᴇʟᴇɢʀᴀᴍ_ᴇᴅɪᴛ_sʟᴇᴇᴩ** :` {tg_sleep} sᴇᴄᴏɴᴅs`
-**ᴄʟᴇᴀɴᴍᴏᴅᴇ_ᴍɪɴs** : `{cm} ᴍɪɴᴜᴛᴇs`
-**ᴠɪᴅᴇᴏ_sᴛʀᴇᴀᴍ_ʟɪᴍɪᴛ** : `{v_limit} ᴄʜᴀᴛs`
-**sᴇʀᴠᴇʀ_ᴩʟᴀʏʟɪsᴛ_ʟɪᴍɪᴛ** :` {playlist_limit}`
-**ᴩʟᴀʏʟɪsᴛ_ғᴇᴛᴄʜ_ʟɪᴍɪᴛ** :` {fetch_playlist}`
+<u>Bᴏᴛ Vᴀʀɪᴀʙʟᴇs :</u>
 
-**<u>sᴩᴏᴛɪғʏ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**sᴩᴏᴛɪғʏ_ᴄʟɪᴇɴᴛ_ɪᴅ** :` {sotify}`
-**sᴩᴏᴛɪғʏ_ᴄʟɪᴇɴᴛ_sᴇᴄʀᴇᴛ** : `{sotify}`
+AUTO_LEAVING_ASSISTANT : {ass}
+ASSISTANT_LEAVE_TIME : {auto_leave} sᴇᴄᴏɴᴅs
+AUTO_DOWNLOADS_CLEAR : {down}
+PRIVATE_BOT_MODE : {pvt}
+YOUTUBE_EDIT_SLEEP : {yt_sleep} sᴇc.
+TELEGRAM_EDIT_SLEEP : {tg_sleep} sᴇᴄ.
+CLEANMODE_MINS : {cm} ᴍɪɴ.
+VIDEO_STREAM_LIMIT : {v_limit} ᴄʜᴀᴛ
+SERVER_PLAYLIST_LIMIT : {playlist_limit}
+PLAYLIST_FETCH_LIMIT : {fetch_playlist}
 
-**<u>Playsize Vars:</u>**
-**ᴛɢ_ᴀᴜᴅɪᴏ_ғʟɪᴇsɪᴢᴇ_ʟɪᴍɪᴛ** :` {tg_aud}`
-**ᴛɢ_ᴠɪᴅᴇᴏ_ғɪʟᴇsɪᴢᴇ_ʟɪᴍɪᴛ** :` {tg_vid}`
+<u>Sᴩᴏᴛɪғʏ Vᴀʀɪᴀʙʟᴇs :</u>
 
-**<u>ᴇxᴛʀᴀ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**sᴜᴩᴩᴏʀᴛ_ᴄʜᴀɴɴᴇʟ** : `{s_c}`
-**sᴜᴩᴩᴏʀᴛ_ɢʀᴏᴜᴩ** : ` {s_g}`
-**sᴛᴀʀᴛ_ɪᴍɢ_ᴜʀʟ** : ` {start}`
+SPOTIFY_CLIENT_ID : {sotify}
+SPOTIFY_CLIENT_SECRET : {sotify}
+
+<u>Pʟᴀʏsɪᴢᴇ Vᴀʀs :</u>
+
+TG_AUDIO_FILESIZE_LIMIT : {tg_aud}
+TG_VIDEO_FILESIZE_LIMIT : {tg_vid}
+
+<u>Exᴛʀᴀ Vᴀʀɪᴀʙʟᴇs :</u>
+
+SUPPORT_CHANNEL : {s_c}
+SUPPORT_GROUP :  {s_g}
+START_IMG_URL :  {start}
     """
     await asyncio.sleep(1)
     await mystic.edit_text(text)
