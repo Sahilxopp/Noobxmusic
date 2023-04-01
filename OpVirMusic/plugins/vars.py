@@ -19,7 +19,7 @@ async def varsFunc(client, message):
     )
     v_limit = await get_video_limit()
     bot_name = config.BOT_NAME
-    up_r = f"[ʀᴇᴩᴏ]({config.UPSTREAM_REPO})"
+    up_r = f"[Rᴇᴩᴏ]({config.UPSTREAM_REPO})"
     up_b = config.UPSTREAM_BRANCH
     auto_leave = config.AUTO_LEAVE_ASSISTANT_TIME
     yt_sleep = config.YOUTUBE_DOWNLOAD_EDIT_SLEEP
@@ -75,7 +75,8 @@ async def varsFunc(client, message):
     tg_vid = convert_bytes(config.TG_VIDEO_FILESIZE_LIMIT)
     text = f"""**Mᴜsɪᴄ Bᴏᴛ Cᴏɴғɪɢ Vᴀʀɪᴀʙʟᴇs :**
 
-<u>Bᴀsɪᴄ Vᴀʀɪᴀʙʟᴇs:</u>
+**<u>Bᴀsɪᴄ Vᴀʀɪᴀʙʟᴇs:</u>**
+
 MUSIC_BOT_NAME : {bot_name}
 DURATION_LIMIT : {play_duration} ᴍɪɴᴜᴛᴇs
 SONG_DOWNLOAD_DURATION_LIMIT : {song} ᴍɪɴᴜᴛᴇs
