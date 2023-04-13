@@ -6,7 +6,7 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
 from OpVirMusic import app, userbot as app2
-from config import OWNER_ID as OWNER, SUPPORT_HEHE as SUNAME
+from config import OWNER_ID as OWNER, SUPPORT_GROUP as SUNAME
 
 
 @app.on_message(filters.command(["leaveall", "assleaveall"]) & filters.user(OWNER))
