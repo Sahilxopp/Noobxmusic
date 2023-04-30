@@ -28,7 +28,7 @@ SUPPORT_GROUP = getenv(
     "SUPPORT_GROUP", "https://t.me/Shayri_Music_Lovers")
 
 DURATION_LIMIT_MIN = int(
-    getenv("DURATION_LIMIT", "900000")
+    getenv("DURATION_LIMIT", "900001")
 )
 SONG_DOWNLOAD_DURATION = int(
     getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180000")
