@@ -63,14 +63,14 @@
         "value": "",
         "required": false
       },
-      "LOG_GROUP_ID": {
+      "LOGGER_ID": {
         "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Use only Group. Please don't use Channel ID.",
         "value": "",
         "required": true
       },
       "UPSTREAM_REPO": {
         "description": "If you dont know this, Leave as it is",
-        "value": "https://github.com/TheTeamOpVir/OpVirMusic",
+        "value": "https://github.com/ViR99/iTzViR-MuSiC",
         "required": true
       },
       "UPSTREAM_BRANCH": {
