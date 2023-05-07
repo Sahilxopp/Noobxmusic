@@ -14,7 +14,7 @@ async def on_new_chat_members(client: Client, message: Message):
         title = message.chat.title
         chat_id = message.chat.id
         chatusername = f"@{message.chat.username}" if message.chat.username else "Pʀɪᴠᴀᴛᴇ Cʜᴀᴛ"
-        atiya = f"**~⟩ Nᴇᴡ Gʀᴏᴜᴘ #Aᴅᴅᴇᴅ Tᴏ Bᴏᴛ ✓*"\n\n• Cʜᴀᴛ Tɪᴛʟᴇ ~ {title}\n• Cʜᴀᴛ Iᴅ ~ {chat_id} \n• Cʜᴀᴛ Lɪɴᴋ ~ {chatusername}\n• Aᴅᴅᴇᴅ Bʏ ~ {added_by}"
+        atiya = f"**~⟩ Nᴇᴡ Gʀᴏᴜᴘ #Aᴅᴅᴇᴅ Tᴏ Bᴏᴛ ✓**\n\n• Cʜᴀᴛ Tɪᴛʟᴇ ~ {title}\n• Cʜᴀᴛ Iᴅ ~ {chat_id} \n• Cʜᴀᴛ Lɪɴᴋ ~ {chatusername}\n• Aᴅᴅᴇᴅ Bʏ ~ {added_by}"
         await new_message(LOGGER_ID, atiya)
         with open('group_username.txt', 'w') as f:
             f.write(chatusername)
