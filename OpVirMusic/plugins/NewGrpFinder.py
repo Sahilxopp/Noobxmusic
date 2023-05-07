@@ -24,12 +24,13 @@ async def on_new_chat_members(client: Client, message: Message):
 
 @app.on_message(filters.left_chat_member)
 async def on_left_chat_member(client: Client, message: Message):
-    randi = message.from_user.mention if message.from_user else "Uɴᴋɴᴏᴡɴ Usᴇʀ"
-    title = message.chat.title
-    chat_id = message.chat.id
-    with open('group_username.txt', 'r') as f:
-        chatusername = f.read()
-    atiya = f"~⟩ Nᴇᴡ Gʀᴏᴜᴘ #Lᴇꜰᴛ ✓\n\n• Cʜᴀᴛ Tɪᴛʟᴇ ~ {title}\n• Cʜᴀᴛ Iᴅ ~ {chat_id} \n• Cʜᴀᴛ Lɪɴᴋ ~ {chatusername}\n• Rᴇᴍᴏᴠᴇᴅ Bʏ ~ {randi}"
-    await new_message(LOGGER_ID, atiya)
-
+    if (await client.get_me()).id in [user.id for user in message.left_chat_member]:
+        randi = message.from_user.mention if message.from_user else "ᴜɴᴋɴᴏᴡɴ ᴜsᴇʀ"
+        title = message.chat.title
+        chat_id = message.chat.id
+        with open('group_username.txt', 'r') as f:
+            chatusername = f.read()
+        atiya = f"#ʟᴇꜰᴛ ɢʀᴏᴜᴘ\n\nᴄʜᴀᴛ ɪᴅ : {chat_id}\nᴄʜᴀᴛ ᴛɪᴛʟᴇ : {title}\nᴄʜᴀᴛ ʟɪɴᴋ : {chatusername}\nʀᴇᴍᴏᴠᴇᴅ ʙʏ : {randi}"
+        await new_message(LOGGER_ID, atiya)
+        
 #itz_rocks_krishna
