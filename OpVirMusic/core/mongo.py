@@ -1,8 +1,3 @@
-# Kanged By © @always_hungry365
-# Owner Mayank
-# All rights reserved. © Alisha © OpVir © Yukki
-# Subscribe On YT Jankari Ki Duniya
-
 from motor.motor_asyncio import AsyncIOMotorClient as _mongo_client_
 from pymongo import MongoClient
 from pyrogram import Client
@@ -33,5 +28,5 @@ if config.MONGO_DB_URI is None:
 else:
     _mongo_async_ = _mongo_client_(config.MONGO_DB_URI)
     _mongo_sync_ = MongoClient(config.MONGO_DB_URI)
-    mongodb = _mongo_async_.Yukki
-    pymongodb = _mongo_sync_.Yukki
+    mongodb = _mongo_async_.atiya
+    pymongodb = _mongo_sync_.atiya
