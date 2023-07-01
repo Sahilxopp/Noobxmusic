@@ -11,13 +11,13 @@ API_ID = int(getenv("API_ID","18732851"))
 API_HASH = getenv("API_HASH","0a409e0d80850704667d887f3849a936")
 BOT_TOKEN = getenv("BOT_TOKEN","")
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Abhi_012s:Rana2023*@cluster0.oo9gfyf.mongodb.net/?retryWrites=true&w=majority")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 
 LOGGER_ID = int(getenv("LOGGER_ID", "-1001907995111"))
 
 GBAN_LOG_ID = int(getenv("GBAN_LOG", "-1001800713917"))
 
-BOT_NAME = getenv("BOT_NAME", "𝗝𝗲𝗿𝗿𝘆 𝗠𝘂𝘀𝗶𝗰 [🇮🇳]")
+BOT_NAME = getenv("BOT_NAME", "˹Zᴀʀᴀ ꭙ Mᴜsɪᴄ[🇮🇳]")
 OWNER_ID = list(
     map(int, getenv("OWNER_ID", "5971645819").split())
 )
@@ -98,11 +98,11 @@ clean = {}
 
 autoclean = []
 
-START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/4c12fd461b7448aebc125.jpg")
+START_IMG_URL = getenv("https://te.legra.ph/file/77924dbacd7167cc546d7.jpg")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "https://te.legra.ph/file/bf8ec8f7d58ef2b43059a.jpg",
+    "https://te.legra.ph/file/f5bee35c2a17ff3ac17eb.jpg",
 )
 
 PLAYLIST_IMG_URL = "https://telegra.ph/file/075610fd1519afd9ed467.png"
