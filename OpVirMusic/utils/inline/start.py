@@ -9,7 +9,7 @@ def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
             InlineKeyboardButton(
-                text=" Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⛦",
+                text=" Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ",
                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ],
@@ -20,7 +20,12 @@ def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
             ),
             InlineKeyboardButton(
                 text=" Sᴇᴛᴛɪɴɢs ", callback_data="settings_helper"
-            ),
+            )
+        ],
+        [   
+            InlineKeyboardButton(
+                text="Rᴀɴᴀ [🇮🇳]", user_id=OWNER
+            )
         ],
      ]
     return buttons
@@ -30,7 +35,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
             InlineKeyboardButton(
-                text="+ Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ +",
+                text="Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ],
@@ -44,13 +49,16 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
                 text="Sᴜᴩᴩᴏʀᴛ", url=config.SUPPORT_GROUP
             ),
             InlineKeyboardButton(
-                text="Oᴡɴᴇʀ", user_id=OWNER
+                text="Rᴀɴᴀ", user_id=OWNER
             )
         ],
-        [
+        [    
             InlineKeyboardButton(
-                text="[❄️] Iɴᴛʀᴏᴅᴜᴄᴛɪᴏɴ [❄️]", callback_data="gib_source"
-            )
+                text="Sᴏᴜʀᴄᴇ", url="https://te.legra.ph/file/5fa7b4d86dcd5720ef30c.mp4"
+            ),
+            InlineKeyboardButton(
+                text="Uᴘᴅᴀᴛᴇs", url=config.SUPPORT_CHANNEL
+            )   
         ],
      ]
     return buttons
